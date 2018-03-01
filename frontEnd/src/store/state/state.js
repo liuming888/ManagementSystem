@@ -13,8 +13,8 @@ export default {
     userMap: {
         userObj: {},//登录账号信息
         nicheng: 'admin',//账号昵称
-        userurl: '../../../static/image/upload_1b094316b29d6c353895ee9e936d2cad.jpg',//改头像图片文件的路径
-        appuserurl: '../static/image/upload_1b094316b29d6c353895ee9e936d2cad.jpg'//App文件的顶部用户图片路径
+        userurl: '../../../static/image/upload_1a1b8b7943b102986e190a524f68cbe6.jpg',//改头像图片文件的路径
+        appuserurl: '../static/image/upload_1a1b8b7943b102986e190a524f68cbe6.jpg'//App文件的顶部用户图片路径
     }
 
 }

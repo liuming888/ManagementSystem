@@ -10,12 +10,13 @@
         color: rgb(37, 16, 156);
       }
       .block {
+          width: 100%;
         position: absolute;
         bottom: 12px;
         left: 0;
         .pagebar {
           position: absolute;
-          left: 160px;
+          left: 24%;
           top: 0px;
         }
       }

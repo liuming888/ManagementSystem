@@ -8,8 +8,6 @@ var formidable = require("formidable");
 var Bmry = require("./model/Bmry.js");//报名
 var Zzry = require("./model/Zzry.js");//在职
 var User = require("./model/User.js");//用户信息
-var cookieParser = require('cookie-parser');//cookie模块
-app.use(cookieParser());
 var path = require('path');
 var gm = require("gm");
 

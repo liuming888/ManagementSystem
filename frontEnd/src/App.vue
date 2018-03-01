@@ -27,10 +27,16 @@
     .el_main{
         width: calc(100%-300px);
     }
+    .bigboxs{
+        width: 100%;height: 100%;
+        .minboxs{
+            width: 100%;height: 100%;
+        }
+    }
 </style>
 <template>
-    <div>
-        <div v-if="!showMap">
+    <div class="bigboxs">
+        <div v-if="!showMap" class="minboxs">
             <router-view></router-view>
         </div>
         <el-container v-show="showMap">
@@ -78,7 +84,9 @@
         this.$store.dispatch("ALLPAGE", { page: 1 }); //拉取信息管理第一页数据
         this.$store.dispatch("ALLSUM"); //拉取招聘人数统计图数据
         this.$store.dispatch("ZAIZHISUM"); //拉取在职人数统计图数据
-        this.$store.dispatch("USERSURL");//拉取用户信息
+        if(localStorage.getItem("isLogin")=='true'){//如果登录了
+            this.$store.dispatch("USERSURL");//拉取用户信息
+        }
       },
       data() {
         return {

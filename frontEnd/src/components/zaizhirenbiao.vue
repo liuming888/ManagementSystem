@@ -10,12 +10,13 @@
         color: rgb(37, 16, 156);
       }
       .block {
+        width: 100%;
         position: absolute;
         bottom: 12px;
         left: 0;
         .pagebar {
           position: absolute;
-          left: 160px;
+          left: 24%;
           top: 0px;
         }
       }
@@ -47,7 +48,7 @@
         <div style="margin: 20px 0">
             <el-button @click="toggleSelection(tableData3)" size="small">全选</el-button>
             <el-button @click="toggleSelection()" size="small">取消选择</el-button>
-            <el-button type="primary" @click="luqubtn"  size="small">确定离职</el-button>
+            <el-button type="primary" @click="luqubtn" size="small">确定离职</el-button>
             <div class="mohu">
                 <p>
                     <span>{{this.spantxt}}</span>
@@ -55,8 +56,7 @@
                 <el-input class="sousuo" placeholder="请输入搜索内容" prefix-icon="el-icon-search" v-model.trim="sousuo" @blur="blurinput"></el-input>
             </div>
         </div>
-        <el-table ref="multipleTable" :data="tableData3" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange" @row-dblclick="tanchu($event.id)" size="mini"
-         v-loading="loading2" element-loading-background="rgba(255, 255, 255, 0.8)">
+        <el-table ref="multipleTable" :data="tableData3" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange" @row-dblclick="tanchu($event.id)" size="mini" v-loading="loading2" element-loading-background="rgba(255, 255, 255, 0.8)">
             <el-table-column type="selection" width="55">
             </el-table-column>
             <el-table-column label="职位" width="120">
@@ -98,7 +98,7 @@
           currentPage4: 1, //默认第一页
           fenyebar: true, //分页条显不显示
           lists: 1, //数据总数
-          pagebars: [5,8, 10], //每页几条选择
+          pagebars: [5, 8, 10], //每页几条选择
           bar: 10, //每页几条
           dangqianpage: 1, //当前页
           chagaishuju: {
@@ -108,7 +108,7 @@
           },
           spantxt: "", //查询提示文字
           multipleSelection: [], //选择项
-          loading2:false
+          loading2: false
         };
       },
       created() {
@@ -135,14 +135,14 @@
         },
         handleSizeChange(val) {
           this.bar = val; //每页几条
-           this.$store.dispatch("ZAIZHIALL", {
+          this.$store.dispatch("ZAIZHIALL", {
             danwei: this.biaoShow.danwei,
             gangwei: this.biaoShow.gangwei,
             page: 1, //请求明细首页
             pagesum: val //每页多少条
           });
-          this.loading2=true;
-          this.dangqianpage=1;
+          this.loading2 = true;
+          this.dangqianpage = 1;
         },
         handleCurrentChange(val) {
           //换页时
@@ -153,7 +153,7 @@
             page: this.dangqianpage, //当前页
             pagesum: this.bar //默认每页5条
           });
-          this.loading2=true;
+          this.loading2 = true;
         },
         tanchu(id) {
           //弹出层
@@ -181,7 +181,7 @@
         luqubtn() {
           //离职按钮点击时
           this.$store.dispatch("DELZAIZHI", this.multipleSelection); //删除
-          this.loading2=true;
+          this.loading2 = true;
         }
       },
       watch: {
@@ -201,7 +201,7 @@
           ~~((this.lists - 1) / this.bar) > 0
             ? (this.fenyebar = true)
             : (this.fenyebar = false); //就一页分页条不显示
-            this.loading2=false;
+          this.loading2 = false;
           this.$store.dispatch("ALLSUM"); //拉取招聘人数统计图数据
           this.$store.dispatch("ZAIZHISUM"); //拉取在职人数统计图数据
         },

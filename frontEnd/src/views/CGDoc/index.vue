@@ -14,9 +14,9 @@
                 <el-col :span="5">
                     <el-input class="inline-input" placeholder="请输入手机" v-model.trim="val3" @keyup.enter="cha('cc')" size="small"></el-input>
                 </el-col>
-                <el-col :span="2">
-                    <el-button class="btn1" type="primary" @click="cha('cc')" size="small">查询</el-button>
-                    <el-button class="btn2" type="primary" @click="cha('cz')" size="small">重置</el-button>
+                <el-col :span="5">
+                    <el-button class="btn" type="primary" @click="cha('cc')" size="small">查询</el-button>
+                    <el-button class="btn" type="primary" @click="cha('cz')" size="small">重置</el-button>
                 </el-col>
             </el-row>
         </div>
@@ -61,7 +61,7 @@
                 </el-table-column>
             </el-table>
         </div>
-        <div class="setpage" v-if="$store.state.maplist.length>2">
+        <div class="setpage" v-if="$store.state.maplist.length>2" id="setpage">
             <el-pagination background layout="prev, pager, next" :total="pagesum" class="pages" @current-change="loadpage">
             </el-pagination>
             <span class="tishi">提示：双击某条数据修改</span>
@@ -92,6 +92,10 @@
       created() {
         this.tableData = this.$store.state.maplist.slice(0, 8); //默认显示两条
         this.pagesum = this.$store.state.pages * 8; //element的分页原因乘10
+      },
+      mounted(){
+          var wVal= document.getElementById("setpage").offsetWidth;
+          document.getElementById("setpage").style.marginLeft="-"+wVal/2+'px';
       },
       watch: {
         "$store.state.maplist"(newval, oldval) {

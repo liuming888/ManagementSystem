@@ -2,6 +2,7 @@
       width: 100%;
       height: 100%;
       position: relative;
+      overflow: hidden;
       .tijian {
         border: 1px solid #eee;
         padding: 0 5px 0px 5px;
@@ -13,16 +14,7 @@
           background: #eee;
           line-height: 36px;
         }
-        .btn1 {
-          position: absolute;
-          bottom: 0;
-          left: 660px;
-        }
-        .btn2 {
-          position: absolute;
-          bottom: 0;
-          left: 730px;
-        }
+        .btn{width:30%;text-align: center;}
       }
       .table {
         height: 360px;
@@ -31,15 +23,17 @@
         margin-top: 20px;
       }
       .setpage {
-        padding-left: 264px;
+       transform:translateX(50%);
         position: relative;
         height: 30px;
+        .pages{
+            float:left;
+            margin-right:12%; 
+        }
         span.tishi {
           color: skyblue;
           font-size: 10px;
-          position: absolute;
-          right: 0;
-          top: 0;
+          float: left;
         }
       }
       .tanchu {

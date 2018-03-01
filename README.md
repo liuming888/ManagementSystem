@@ -12,7 +12,7 @@ vue2+vuex+vue-router+vue-cli+ES6+axios+vue-axios+Element-ui+less+vee-validate+vu
 
 
 # 项目运行
-  一.首先确保已安装mongoDB数据库，nodejs运行平台,以及gm软件（本项目用它裁切图片，下载地址：ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/windows/ ）
+  一.首先确保已安装mongoDB数据库(最新版)，nodejs运行平台,以及gm软件（本项目用它裁切图片，下载地址：ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/windows/ ）
   
   
   二.请按以下步骤操作：
@@ -21,7 +21,7 @@ vue2+vuex+vue-router+vue-cli+ES6+axios+vue-axios+Element-ui+less+vee-validate+vu
     1.打开数据库，导入这个模拟数据，具体操作为：
         开一个CMD窗口，运行
             mongod --dbpath c:\database（当然你要保证已经在c盘已经有了这个文件夹，并且已经装了mongodb）
-        然后在项目文件夹的根目录（注意路径），再开一个CMD（刚才开的那个mongod的那个CMD不能关闭！），复制下面的语句到CMD中按回车
+        然后在项目文件夹rear-end的根目录（注意路径），再开一个CMD（刚才开的那个mongod的那个CMD不能关闭！），复制下面的语句到CMD中按回车
             mongoimport -d zpglxt -c zzries ./init/在职人员模拟数据.txt --drop（此时数据库就会被自动创建，表也会自动创建，数据库的名字zpglxt，表的名字叫做zzries。）
             mongoimport -d zpglxt -c bmries ./init/招聘人员模拟数据.txt --drop（此时数据库就会被自动创建，表也会自动创建，数据库的名字zpglxt，表的名字叫做bmries。）
             
